@@ -7,7 +7,7 @@ jobs:
   build-test:
     runs-on: ubuntu-latest
     env: 
-      Dev: "Development"
+      MyName: "Mevlut"
 
     steps:
       - uses: actions/checkout@v3
