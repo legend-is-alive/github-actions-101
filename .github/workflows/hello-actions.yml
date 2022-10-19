@@ -35,6 +35,6 @@ jobs:
         if: success() || failure()
         with:
           name: Api Tests
-          path: "/Notes.Api.Test/TestResults/*.trx"                            
+          path: "Notes.Api.Test/TestResults/*.trx"                            
           reporter: dotnet-trx
 #        fail-on-error: true
