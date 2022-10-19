@@ -30,7 +30,7 @@ jobs:
         run: dotnet test --no-build --configuration Release Notes.Api.Test/Notes.Api.Test.csproj
 
       - name: "Report Tests"
-        run: dotnet test --no-build --configuration Release --verbosity normal --logger trx Notes.Api.Test/Notes.Api.Test.csproj
+        #run: dotnet test --no-build --configuration Release --verbosity normal --logger trx Notes.Api.Test/Notes.Api.Test.csproj
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
@@ -38,4 +38,3 @@ jobs:
           path: "**/**.trx"                            
           reporter: dotnet-trxs
 #        fail-on-error: true
-#        run: dotnet test --no-build --configuration Release --verbosity normal --logger trx Notes.Api.Test/Notes.Api.Test.csproj
