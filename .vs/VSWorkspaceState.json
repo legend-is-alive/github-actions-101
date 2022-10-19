@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\Notes.Api"
+  ],
+  "SelectedNode": "\\Notes.Api\\Notes.Api.csproj",
+  "PreviewInSolutionExplorer": false
+}

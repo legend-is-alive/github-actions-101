@@ -1,22 +1,28 @@
-name: "Hello Actions!"
+name: "Hello .NET"
 
 on:
   workflow_dispatch:
-  push:
 
 jobs:
-  say-hello:
+  build-test:
     runs-on: ubuntu-latest
-    steps:
-      - name: "Echo Greeting"
-        run: "echo 'Hei på deg GitHub Actions!'"
-      - name: "Echo Goodnight"
-        run: "echo 'Natta!'"
 
-  run-newCommand:
-    runs-on: ubuntu-latest
     steps:
-      - name: "Mevlut Command"
-        run: "echo 'Well thats a command I guess'"
-      - name: "The End"
-        run: "echo 'bye bye'" 
+      - uses: actions/checkout@v3
+
+      - name: "Setup .NET Core SDK"
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: "Print .NET CLI version"
+        run: dotnet --version
+
+      - name: "Restore"
+        run: dotnet restore Notes.Api.Test/Notes.Api.Test.csproj      
+      
+      - name: "Build"
+        run: dotnet build --no-restore --configuration Release Notes.Api.Test/Notes.Api.Test.csproj      
+
+      - name: "Run Tests"
+        run: dotnet test --no-build --configuration Release Notes.Api.Test/Notes.Api.Test.csproj
