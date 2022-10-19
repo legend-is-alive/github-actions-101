@@ -29,12 +29,12 @@ jobs:
       - name: "Run Tests"
         run: dotnet test --no-build --configuration Release Notes.Api.Test/Notes.Api.Test.csproj
 
-      - name: "Report Tests"
-        #run: dotnet test --no-build --configuration Release --verbosity normal --logger trx Notes.Api.Test/Notes.Api.Test.csproj
-        uses: dorny/test-reporter@v1
-        if: success() || failure()
-        with:
-          name: Api Tests
-          path: "Notes.Api.Test/TestResults/*.trx"                            
-          reporter: dotnet-trx
-#        fail-on-error: true
+#      - name: "Report Tests"
+#        #run: dotnet test --no-build --configuration Release --verbosity normal --logger trx Notes.Api.Test/Notes.Api.Test.csproj
+#        uses: dorny/test-reporter@v1
+#        if: success() || failure()
+#        with:
+#          name: Api Tests
+#          path: "Notes.Api.Test/TestResults/*.trx"                            
+#          reporter: dotnet-trx
+##        fail-on-error: true
