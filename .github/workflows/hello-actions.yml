@@ -6,6 +6,8 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    env: 
+      Dev: "Development"
 
     steps:
       - uses: actions/checkout@v3
