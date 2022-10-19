@@ -12,3 +12,11 @@ jobs:
         run: "echo 'Hei på deg GitHub Actions!'"
       - name: "Echo Goodnight"
         run: "echo 'Natta!'"
+
+  run-newCommand:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Mevlut Command"
+        run: "echo 'Well thats a command I guess'"
+      - name: "The End"
+        run: "echo 'bye bye'" 
