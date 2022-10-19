@@ -30,7 +30,7 @@ jobs:
         run: dotnet test --no-build --configuration Release Notes.Api.Test/Notes.Api.Test.csproj
 
       - name: "Report Tests"
-        uses: dorny/test-reporter
+        uses: actions/dorny/test-reporter
         if: success() || failure()
         with:
           name: Api Tests
