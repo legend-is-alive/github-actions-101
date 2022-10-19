@@ -36,5 +36,5 @@ jobs:
         with:
           name: Api Tests
           path: "**/**.trx"                            
-          reporter: dotnet-trxs
+          reporter: dotnet-trx
 #        fail-on-error: true
